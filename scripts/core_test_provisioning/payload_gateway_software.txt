@@ -1,0 +1,22 @@
+{
+"version": "1.0",
+"command": "register-gateway",
+"gateway_id":"$gatewayId",
+"parameters":{
+         "device_type":"iot_gateway",
+         "management_mode": "jobs",
+         "maker":"Dell",
+         "serial_number":"EIIDG",
+         "geolocalization": "40.8518,14.2681",
+         "environment_prefix":"$environmentPrefix",
+         "pki_enabled": true,
+	 "gateway_type": "regression-eig",
+         "gateway_software": [
+         { 
+            "name": "APP1",
+            "version": "1.0",
+            "required": true
+          }
+		]
+}
+}

@@ -1,0 +1,25 @@
+[
+ {
+  "query": {
+   "bool": {
+    "must": [
+     {
+      "match": {
+        "latest": true
+      }
+     }
+    ],
+    "filter": {
+     "terms": {
+      "gateway_id.keyword": [
+        <gateway_id>
+      ]
+     }
+    }
+   }
+  }
+ },
+ {
+  "devices_types": "not_supported"
+ }
+]

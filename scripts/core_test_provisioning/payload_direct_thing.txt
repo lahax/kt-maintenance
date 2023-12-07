@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "command": "register-thing",
+  "parameters": {
+    "thing_id": "$thingId",
+    "device_type": "dt",
+    "radio_type": "eth",
+    "model": "emulate_modbus",
+    "maker": "Fibaro",
+    "serial_number": "12345",
+    "environment_prefix": "$environmentPrefix",
+    "geolocalization": "40.8517,14.2417",
+    "interaction_mode": "direct",
+    "outbound_communication_modes": [
+      "topic"
+    ],
+    "inbound_communication_mode": "topic",
+    "management_mode": "jobs",
+     "sw_thing_type": "eig-cu",
+     "thing_software": [
+         { 
+            "name": "APP1",
+            "version": "1.0",
+            "required": true
+          }
+      ]
+}
+}

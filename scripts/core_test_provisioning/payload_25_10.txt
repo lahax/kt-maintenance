@@ -1,0 +1,11 @@
+{
+    "status":"SUCCEEDED",
+    "commandId": $jobId,
+    "statusDetails": {
+        "environment_prefix":"$environmentPrefix",
+        "thing_id":"$gatewayId_$thingId",
+        "install_status":"complete_install",
+        "thing_sw":"ocpp_app:1.0",
+        "custom_status":"Installed"
+    }
+}

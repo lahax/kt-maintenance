@@ -1,0 +1,13 @@
+{
+"version": "1.0",
+"command": "register-gateway",
+"gateway_id":"$gatewayId",
+"parameters":{
+         "device_type":"iot_gateway",
+         "management_mode": "jobs",
+         "maker":"Dell",
+         "serial_number":"EIIDG",
+         "geolocalization": "-45.1018799,7.6668177",
+         "environment_prefix":"$environmentPrefix"
+}
+}

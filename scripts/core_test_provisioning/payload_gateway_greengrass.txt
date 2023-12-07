@@ -1,0 +1,34 @@
+{
+"version": "1.0",
+"command": "register-gateway",
+"gateway_id":"$gatewayId",
+"parameters":{
+         "device_type":"iot_gateway",
+         "management_mode": "jobs",
+         "maker":"Dell",
+         "serial_number":"EIIDG",
+         "geolocalization": "43.7696,11.2558",
+         "environment_prefix":"$environmentPrefix",
+	 "gateway_type": "regression-eig",
+         "greengrass_software": [{ 
+               "name": "core",
+               "version": "1.0",
+               "required": true
+        },
+
+	{
+
+	"name": "ota_agent",
+	"version": "1.0",
+	"required": false
+
+	}]
+
+       "gateway_software": [
+         {
+            "name": "APP1",
+            "version": "1.0",
+            "required": true
+          }]
+}
+}

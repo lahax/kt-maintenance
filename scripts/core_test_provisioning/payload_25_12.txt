@@ -1,0 +1,11 @@
+{
+"status":"FAILED",
+"commandId":"$jobId",
+"statusDetails": {
+    "environment_prefix":"$environmentPrefix",
+    "thing_id":"$gatewayId_$thingId",
+    "install_status":"failed_install",
+    "thing_sw":"firmware-upgrade-ocpp:1.0",
+    "custom_status":"Error reason"
+    }
+ }

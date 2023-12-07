@@ -1,0 +1,11 @@
+.idea
+*.iml
+/test-output/
+/target/
+/logs/
+/extractor/
+/webdrivers/
+/app/
+/resources/chromeprofile
+/resources/config.properties
+/resources/spark-config.xml

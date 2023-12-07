@@ -1,0 +1,17 @@
+{
+        "thing_id": "DirectThingConcept2",
+        "device_type": "thing",
+        "is_online": "true",
+        "radio_type": "eth",
+        "timestamp": "20180905152415475",
+        "environment_prefix": "esol_ap29551_qa",
+        "data": {
+          "tags": [
+            {
+              "timestamp": 1536161055375,
+              "trendId": "3000",
+              "value": 9
+            }
+          ]
+        }
+}

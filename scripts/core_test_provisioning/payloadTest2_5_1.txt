@@ -1,0 +1,18 @@
+{
+"version":   "1.0",
+     "command":   "register-thing",
+     "gateway_id":   "$gatewayId",
+     "parameters": {
+          "thing_id":   "$gatewayId_$thingId",
+          "device_type":   "mqtts",
+          "radio_type":   "eth",
+          "model":   "emulate_modbus",
+          "maker":   "Fibaro",
+          "serial_number":   "12345",
+          "environment_prefix":   "$environmentPrefix",
+          "interaction_mode":   "gateway",
+          "outbound_communication_modes": ["topic"],
+          "inbound_communication_mode" :   "topic"
+}
+
+}

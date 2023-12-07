@@ -1,0 +1,21 @@
+{
+     "version":   "1.0",
+     "command":   "register-thing",
+     "gateway_id":   "$gatewayId",
+     "parameters": {
+          "thing_id":   "$gatewayId_$thingId",
+          "model": "MODEL",
+          "maker": "MARKER",
+          "alias": "ALIAS",
+          "radio_type": "RADIO_TYPE",
+          "interaction_mode": "gateway",
+          "ipaddress": "10.0.0.41",
+          "port_num": "8020",
+          "serial_number": "01020304",
+          "device_type": "DEVICE_TYPE",
+          "filter_tag": [{"FILTER_TAG":"text"}],
+          "environment_prefix": "$environmentPrefix",
+          "sw_thing_type":"test"
+    }
+
+}

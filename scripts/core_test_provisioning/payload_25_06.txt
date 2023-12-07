@@ -1,0 +1,7 @@
+{
+    "statusDetails": {
+        "environment_prefix": "esol_ap29551_qa",
+        "thing_id": "GatewayConceptTest57_thing1",
+        "thing_sw": "ocpp-bia-app-pro:2.0"
+    }
+}

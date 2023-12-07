@@ -1,0 +1,7 @@
+{
+  "statusDetails": {
+    "environment_prefix": "$environmentPrefix",
+    "thing_id": "$thingId",
+    "thing_sw": "test-bia-app:1.0"
+  }
+}

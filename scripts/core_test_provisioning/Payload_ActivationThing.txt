@@ -1,0 +1,16 @@
+{
+"outbound_communication_modes": ["topic"],
+"inbound_communication_mode": ["topic"],
+"interaction_mode": "gateway",
+"environment_prefix": "<environment_prefix>",
+"radio_type": "eth",
+"device_type": "mqtts",
+"serial_number": "12345",
+"model": "emulate_modbus",
+"maker": "Fibaro",
+"filter_tag": [{
+"id": 1,
+"period": 10,
+"tag": "topic/test"
+}]
+}
