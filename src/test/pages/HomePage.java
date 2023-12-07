@@ -244,7 +244,7 @@ public class HomePage {
     private static PageElement projectEsolPerf;
     @Element(xpath = "//div[@class='card-top']//div[contains(text(), 'esol-ap29551-test')]", desc="project card esol - test")
     private static PageElement projectEsolTest;
-    @Element(xpath = "//span[contains(text(), ' If multiple projects are selected, not all features will be available. ')]", desc="white selection  multiple bar")
+    @Element(xpath = "//span[contains(text(), ' If multiple apm are selected, not all features will be available. ')]", desc="white selection  multiple bar")
     private static PageElement multipleWhiteBar;
 
 
