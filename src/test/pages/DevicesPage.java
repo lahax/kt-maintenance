@@ -109,6 +109,9 @@ public class DevicesPage {
     @Element(xpath = "//em[contains(text(), 'Test_Concept-02_thing2')]", desc = "test concept02 thing2 row")
     private static PageElement testConcept02Thing2Row;
 
+    @Element(xpath = "//em[contains(text(), 'Test_Concept-02_thing3')]", desc = "test concept02 thing2 row")
+    private static PageElement testConcept02Thing3Row;
+
     @Element(xpath = "//em[contains(text(), 'Test_Concept-01_thing1')]", desc = "test concept01 thing3 row")
     private static PageElement testConcept01Thing1Row;
 
@@ -123,6 +126,9 @@ public class DevicesPage {
 
     @Element(xpath = "//em[contains(text(), 'Test_Concept-02_thing2')]/ancestor::td//following-sibling::td//dmc-table-action[@icon='document']", desc = "test concept02 thing2 device detail icon")
     private static PageElement testConcept02Thing2Details;
+
+    @Element(xpath = "//em[contains(text(), 'Test_Concept-02_thing3')]/ancestor::td//following-sibling::td//dmc-table-action[@icon='document']", desc = "test concept02 thing2 device detail icon")
+    private static PageElement testConcept02Thing3Details;
 
     @Element(xpath = "//span[contains(text(), 'DirectThing_Test15_26')]/ancestor::td//following-sibling::td//dmc-table-action[@icon='document']", desc = "direct thing device detail icon")
     private static PageElement directThingDetails;
@@ -671,7 +677,10 @@ public class DevicesPage {
     @Element(xpath = "//input[@placeholder='Software Version']", desc = "Software Version Input")
     private static PageElement softwareVersionInput;
 
-    @Element(xpath = "//div[@id='mat-autocomplete-11']", desc = "Software Version autocomplete field")
+    //@Element(xpath = "//div[@id='mat-autocomplete-11']", desc = "Software Version autocomplete field")
+    //private static PageElement softwareVersionAC;
+
+    @Element(xpath = "//div[@role='listbox']", desc = "Software Version autocomplete field")
     private static PageElement softwareVersionAC;
 
     @Element(xpath = "//mat-option[contains(.,'sw_eiidg-agent@2.0-test')]", desc = " sw_eiidg-agent@2.0-test ")

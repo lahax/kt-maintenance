@@ -794,10 +794,12 @@ public class LandingPageSteps {
         String graphPath = "";
         switch (section){
             case "Devices & Activations":
-                graphPath = "//div[@class = 'dmc-chart-panel']//*[name()='g'][@class='highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker']/*[name()='rect'][@class = 'highcharts-point']";
+                graphPath = "//header[contains(.,' Devices & Activations ')]/following-sibling::*//*[text()='Activations' and @class='highcharts-axis-title']/parent::*/parent::*//*[@class='highcharts-axis-labels highcharts-xaxis-labels']/child::*";
+                //graphPath = "//div[@class = 'dmc-chart-panel']//*[name()='g'][@class='highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker']/*[name()='rect'][@class = 'highcharts-point']";
                 break;
             case "Alarms":
-                graphPath = "//div[@class = 'dmc-chart-panel pr-5']//*[name()='g'][@class='highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker']/*[name()='rect'][@class = 'highcharts-point']";
+                graphPath = "//header[contains(.,' Alarms ')]/following-sibling::*//*[text()='Alarms' and @class='highcharts-axis-title']/parent::*/parent::*//*[@class='highcharts-axis-labels highcharts-xaxis-labels']/child::*";
+                //graphPath = "//div[@class = 'dmc-chart-panel pr-5']//*[name()='g'][@class='highcharts-series highcharts-series-1 highcharts-column-series highcharts-tracker']/*[name()='rect'][@class = 'highcharts-point']";
                 break;
             default:
                 Assert.fail("The value of section is not valid");

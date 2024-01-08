@@ -53,6 +53,8 @@ public class APIInvocationPage {
 
     @Element(xpath = "//span[@class='segment-value ng-star-inserted']", desc = "JSON error")
     private static PageElement JSONError;
+    @Element(xpath = "//div[@class='ace_gutter-cell  ace_error']", desc = "Unexpected 'P' error field")
+    private static PageElement unexpectedPError;
 
     public static PageElement getApiInvocationLandingPageTitle() {return apiInvocationLandingPageTitle;}
 

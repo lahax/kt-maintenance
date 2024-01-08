@@ -84,6 +84,8 @@ public class SoftwareCataloguePage {
     private static PageElement deviceTypeDropdown;
     @Element(xpath = "//*[@class='-option-label' and contains(text(),'Gateway')]", desc = "Gateway Option")
     private static PageElement gatewayOption;
+    @Element(xpath = "//div[@class='-option --last ng-star-inserted' and contains(.,'Thing')]", desc = "Thing Option")
+    private static PageElement thingOption;
     @Element(xpath = "//*[contains(text(),'Software Type')]/following-sibling::*//input", desc = "Software Type Input")
     private static PageElement softwareTypeInput;
     @Element(xpath = "//div[@class='-option-label' and text()=' testConcept ']", desc = "Software Type Input option")
@@ -117,6 +119,8 @@ public class SoftwareCataloguePage {
         return refreshBtn;
     }
 
+    @Element(xpath = "//dmc-software-card[contains(.,'test_2525')]", desc = "test_2525 card")
+    private static PageElement test_2525Card;
     @Element(xpath = "//div[contains(.,'test_2913')]//div[@class='-handle']", desc = "test_2913 handle")
     private static PageElement test_2913Handle;
     @Element(xpath = "//dmc-software-card-action[contains(.,'Delete')]", desc = "software delete btt")

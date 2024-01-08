@@ -127,6 +127,9 @@ public class NotificationsConfigurationsPage {
     @Element(xpath = "//td[contains(., 'Test_15.26')]//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "delete last notification")
     private static PageElement deleteCustomGroup15_26Notification;
 
+    @Element(xpath = "//td[contains(., '1532')]//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "delete last notification")
+    private static PageElement deleteCustomGroup1532Notification;
+
     @Element(xpath = "//td[contains(., 'all')]//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "delete last notification")
     private static PageElement deleteScopeAllNotification;
 

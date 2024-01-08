@@ -40,14 +40,14 @@ public class ConnectivityHistoryPage {
            desc = "Not available data last disconnection")
     private static PageElement notAvailableDataConnectivityHistory;
 
-    @Element(xpath = "//*[name()='tspan' and contains(.,'Mean Connection')]", desc = "Mean Connection label")
+    @Element(xpath = "//*[@class='highcharts-title' and contains(.,'Mean Connection')]", desc = "Mean Connection label")
     private static PageElement meanConnectionLabel;
-    @Element(xpath = "//*[contains(., 'Mean Connection')]/following-sibling::*[name()='text']/*[contains(., 'Not Available Data')]", desc = "Not avaliable data under Mean connection")
+    @Element(xpath = "//*[@class='highcharts-title' and contains(.,'Mean Connection')]/following-sibling::*[@class='highcharts-subtitle' and contains(.,'Not Available Data')]", desc = "Not avaliable data under Mean connection")
     private static PageElement underNotAvailableDataMeanConnectionVoice;
 
-    @Element(xpath = "//*[name()='tspan' and contains(.,'Connectivity History')]", desc = "Connectivity History")
+    @Element(xpath = "//*[@class='highcharts-title' and contains(.,'Connectivity History')]", desc = "Connectivity History")
     private static PageElement connectivityHistoryLabel;
-    @Element(xpath = "//*[contains(., 'Connectivity History')]/following-sibling::*[name()='text']/*[contains(., 'Not Available Data')]", desc = "Not avaliable data under Connectivity History")
+    @Element(xpath = "//*[@class='highcharts-title' and contains(.,'Connectivity History')]/following-sibling::*[@class='highcharts-subtitle' and contains(.,'Not Available Data')]", desc = "Not avaliable data under Connectivity History")
     private static PageElement underNotAvailableDataConnectivityHistory;
 
 }

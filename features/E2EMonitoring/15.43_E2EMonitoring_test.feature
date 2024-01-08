@@ -1,0 +1,293 @@
+@E2EMonitoring_Test_15.43
+Feature: E2EMonitoring
+
+  Background:
+
+    #STEP 0 - Login and set Language english as default
+    Given I navigate to "https://dmc-iot-test.enel.com/#/auth/login"
+    Then I click LoginPage.loginBtn
+    Then I perform login as "admin" user
+    And I click HomePage.infoUserLoggedIn
+    Then I click HomePage.languageSubOption
+    When I click HomePage.buttonEnglishSubOption
+
+  Scenario: Test 15.43
+
+    #BACKGROUND FOR THE TEST CASE: Alarm of Test 15.36 with scheduled Option
+    # STEP 1
+    # Login on DMC, Access to DMC, open side menu then click on E2E Monitoring and then select Device alarms configuration page
+    Then I enter on "esol-ap29551-qa" project
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.e2eMonitoringOption
+    Then I click SidebarPage.deviceAlarmsConfigurationSubOption
+    Then I wait the progress bar
+    # STEP 2
+    # Click on the Wizard Button to create an alarm
+    Then I click DeviceAlarmsConfigurationPage.wizardBTN
+    # Choose Devices
+    Then I check the presence of DeviceAlarmsConfigurationPage.monitorDevicesRadioBTN Element and then i click it
+    # Click on next
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardNextBTN Element and then i click it
+    # Configure a new alarm
+    Then I check the presence of DeviceAlarmsConfigurationPage.configureNewAlarmRadioBTN Element and then i click it
+    # Click on next
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardNextBTN Element and then i click it
+    #
+    Then I check the presence of DeviceAlarmsConfigurationPage.widespreadDisserviceAlarmRadioBTN Element and then i click it
+    # Click on next
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardNextBTN Element and then i click it
+    # Group and insert in Devices Group the test gateway for the E2E test
+    Then I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowTAB Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.groupDeviceOptionToSelect Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.selectionBoxDevicesGroup Element and then i click it
+    Then I type "Test_Concept-01" into the element DeviceAlarmsConfigurationPage.selectionBoxDevicesGroup
+    Then I type " " into the element DeviceAlarmsConfigurationPage.selectionBoxDevicesGroup
+    And I check the presence of DeviceAlarmsConfigurationPage.testConcept01Device Element and then i click it
+    # Click on next
+    And I check the presence of DeviceAlarmsConfigurationPage.buttonNextStepsTab Element and then i click it
+    # Insert 3 as number of alarms
+    And I type "3" into the element DeviceAlarmsConfigurationPage.numberOfAlarmsLabelInput
+    And I check the presence of DeviceAlarmsConfigurationPage.buttonNextStepsTab2 Element and then i click it
+    # Insert 2 mins in Short time window and 4 mins in Long time window
+    And I type "2" into the element DeviceAlarmsConfigurationPage.shortTimeWindowInput
+    And I type "4" into the element DeviceAlarmsConfigurationPage.longTimeWindowInput
+    Then I check the presence of DeviceAlarmsConfigurationPage.timeWindowUnitDropDown Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.minUnitSelection Element and then i click it
+    # Review the configuration and save
+    And I check the presence of DeviceAlarmsConfigurationPage.buttonNextStepsTab3 Element and then i click it
+    # Review the summary of the configuration and click Next to proceed
+    Then I check the presence of DeviceAlarmsConfigurationPage.alarmConfigurationSummaryTitle
+    And I check the presence of DeviceAlarmsConfigurationPage.buttonNextStepsTab4 Element and then i click it
+    # Click Yes to continue
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardYesRadioBTN Element and then i click it
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardNextBTN Element and then i click it
+    #Set scheduled as Notification window. The time period chosen should let you have just a subset of alarms created during this period of time
+    Then I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowTAB Element and then i click it
+    And I check the presence of DeviceAlarmsConfigurationPage.scheduledOption Element and then i click it
+    #WEEKDAY FROM:
+    Then I click on the current day
+    #Then I select the current hour window plus "15" minutes
+    Then I select the current hour window plus "10" minutes
+    And I check the presence of DeviceAlarmsConfigurationPage.buttonNextNotification Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.notificationConfigurationSummaryTitle
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardSaveBTN Element and then i click it
+    # Click Yes to continue
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardYesRadioBTN Element and then i click it
+    And I check the presence of DeviceAlarmsConfigurationPage.wizardNextBTN Element and then i click it
+    # Insert a Channel for each type then click on Save
+    # Email
+    And I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowSelectOptionChannel Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.channelEmailOptionToSelect Element and then i click it
+    Then I type the random mail into the element DeviceAlarmsConfigurationPage.emailToInsertBox
+    # Cellphone
+    #Then I check the presence of DeviceAlarmsConfigurationPage.wizardAddChannelsBTN Element and then i click it
+    #Then I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowSelectOptionChannel Element and then i click it
+    #Then I check the presence of DeviceAlarmsConfigurationPage.channelSmsOptionToSelect Element and then i click it
+    #Then I save telephone number
+    #Then I type the telephone number saved into the element DeviceAlarmsConfigurationPage.phoneNumberToInsertBox
+    # Topic
+    Then I check the presence of DeviceAlarmsConfigurationPage.wizardAddChannelsBTN Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowSelectOptionChannel Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.channelTopicOptionToSelect Element and then i click it
+    And I type "testtest" into the element DeviceAlarmsConfigurationPage.topicToInsertBox
+    # RDE ALARM
+    Then I check the presence of DeviceAlarmsConfigurationPage.wizardAddChannelsBTN Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.dropDownArrowSelectOptionChannel Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.channelRdeAlarmOptionToSelect Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.wizardSaveBTN Element and then i click it
+    # Controll Wizard Completed and Exit
+    Then I check the presence of DeviceAlarmsConfigurationPage.wizardCompleted
+    Then I check the presence of DeviceAlarmsConfigurationPage.finalExitButton Element and then i click it
+    Then I check the mail boxes
+    # Step 3
+    #
+    #-------------------------------------------------------------------------------------------------------------------
+    # Access AWS Console with role IoTSupport or DMC role (according to the test environment)
+    # Open DynamoDB table esol_ap27611_<env>_ddb_device_monitoring
+    # Click on Filer and add the filter project_id equal to the APM selected
+    # Open the alarm created and check the disservice alarm configuration is as expected:
+    Then I compare the structure of json disservice alarm for "Test_Concept-01" device in the table "esol_ap27611_test_ddb_devices_monitoring" of DynamoDB for "esol-ap29551-qa" apm
+
+    # STEP 4
+    #
+    # Open DynamoDB table esol_ap27611_<env>_ddb_device_monitoring
+    # Click on Filer and add the filter project_id equal to the APM selected
+    # Open the notification configured through the test and check the structure is coherent with the JSON below
+    Then I check the "email" notification data for device "Test_Concept-01" on "esol_ap27611_test_ddb_notification_configuration" DynamoDb table for project "esol-ap29551-qa" apm
+    #Then I check the "telephone" notification data for device "Test_Concept-01" on "esol_ap27611_test_ddb_notification_configuration" DynamoDb table for project "esol-ap29551-qa" apm
+    Then I check the general information like projectid "esol-ap29551-qa" scope target "Test_Concept-01" and scope type "disservice" on "esol_ap27611_test_ddb_notification_configuration" DynamoDb table for project "esol-ap29551-qa" apm
+#------------------------------------End Alarm configuration---------------------------------------
+
+    #Repeat DMC NRT Test Case 15.39 during the time window indicated
+    #
+    #Verify alarms created during the time window indicated are received:
+    #
+    #on DMC page there are all alarms
+    #on SMS, email, MQTT Topic the alarm notification is received
+       #Disconnect a device every 30 seconds
+
+    #CONCEPT: to show thing connected and disconnected I perform BE actions on devices page
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.devicesOption
+    Then I input "Test_Concept-01" in DevicesPage.searchBox
+
+    And I kill the notify_job command still opened
+    Then I listen to MQTT topic, in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing1" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing2" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing3" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    #Then I connect the "thing3" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+    #Then I connect the "thing3" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+#    Then I connect the "thing1" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+    And I disconnect "thing1"
+    Then I wait 30 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    And I disconnect "thing2"
+    Then I wait 30 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    And I disconnect "thing3"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I wait 10 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    #Step 3
+    #Verify the short window Disservice alarm is created after 2 minutes:
+    #check on Alarms page on DMC
+    #check the alarm is received on email and phone number indicated
+    #Check the scope indicated is coherent with the configuration applied
+
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.alarmsOption
+    Then I wait 1 minutes after script
+    Then I input "Test_Concept-01 " in AlarmsPage.searchBox
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    Then I wait 20 seconds
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    And I check the presence of AlarmsPage.lastAlarmWithTestConcept01IconDetail Element and then i click it
+    Then I check the presence of AlarmsDetailsPage.alarmsDetailsLandingPageTitle
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmInDetails
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmTwoMinutes
+
+    #Check Email
+    #Then I check message of "short time disservice" notification in mail boxes, from device "Test_Concept-01" in the project "esol-ap29551-qa"
+    Then I check message of "widspread disservice" notification in mail object, from device "Test_Concept-01" in the project "esol-ap29551-qa"
+    #Check MQTT
+    And I check that MQTT is receiving a notification message with fields: "disservice_alarm" and "Test_Concept-01"
+    And I kill the notify_job command still opened
+    Then I listen to MQTT topic, in the project "esol_ap29551_qa"
+    #Check SMS
+    #Then I check text "Test_Concept-01" is in sms boxes body
+
+
+    # and the long Disservice alarm is created after 4 minutes:
+    And I check the presence of AlarmsDetailsPage.backBTN Element and then i click it
+    Then I wait 2 minutes after script
+    Then I input "Test_Concept-01 " in AlarmsPage.searchBox
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    And I wait the progress bar
+    And I wait 5 seconds
+    And I check the presence of AlarmsPage.lastAlarmWithTestConcept01IconDetail Element and then i click it
+    Then I check the presence of AlarmsDetailsPage.alarmsDetailsLandingPageTitle
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmInDetails
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmFourMinutes
+    #Check Email
+    #Then I check message of "long time disservice" notification in mail boxes, from device "Test_Concept-01" in the project "esol-ap29551-qa"
+    Then I check message of "widspread disservice" notification in mail object, from device "Test_Concept-01" in the project "esol-ap29551-qa"
+      #Check SMS
+    #Check MQTT
+    And I check that MQTT is receiving a notification message with fields: "disservice_alarm" and "Test_Concept-01"
+
+    #Repeat DMC NRT Test Case 15.39-15.42 outside the time window indicated
+    Then I wait 10 minutes to be outside the notification window
+    #Verify alarms created during the time window indicated are NOT received:
+
+    #CONCEPT: to show thing connected and disconnected I perform BE actions on devices page
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.devicesOption
+    Then I input "Test_Concept-01" in DevicesPage.searchBox
+    #on DMC page there are all alarms
+    #on SMS, email, MQTT Topic the alarm notification is NOT received
+    And I kill the notify_job command still opened
+    Then I listen to MQTT topic, in the project "esol_ap29551_qa"
+        #Disconnect a device every 3 minutes
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing1" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing2" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I connect the "thing3" of "Test_Concept-01", in the project "esol_ap29551_qa"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    #Then I connect the "thing3" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+#    Then I connect the "thing2" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+#    Then I connect the "thing1" of device "Test_Concept-01", in the project "esol_ap29551_qa", for 30 seconds, then disconnect it.
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    And I disconnect "thing1"
+    Then I wait 30 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    And I disconnect "thing2"
+    Then I wait 30 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    And I disconnect "thing3"
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    Then I wait 10 seconds after script
+    Then I check the presence of DevicesPage.refreshBTN Element and then i click it
+    #Step 3
+    #Verify the short window Disservice alarm is created after 2 minutes:
+    #check on Alarms page on DMC
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.alarmsOption
+    Then I wait 1 minutes after script
+    Then I input "Test_Concept-01 " in AlarmsPage.searchBox
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    And I wait the progress bar
+    Then I wait 20 seconds
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    And I check the presence of AlarmsPage.lastAlarmWithTestConcept01IconDetail Element and then i click it
+    Then I check the presence of AlarmsDetailsPage.alarmsDetailsLandingPageTitle
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmInDetails
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmTwoMinutes
+
+    #check the alarm is not received
+     #email
+    Then I check the number of emails received and expect 3 notification
+     #Check MQTT
+    And I check that MQTT is not receiving a notification message with field "disservice_alarm" from device "Test_Concept-01"
+
+
+    # and the long Disservice alarm is created after 4 minutes:
+    And I check the presence of AlarmsDetailsPage.backBTN Element and then i click it
+    Then I wait 3 minutes after script
+    Then I input "Test_Concept-01 " in AlarmsPage.searchBox
+    And I check the presence of AlarmsPage.refreshBTN Element and then i click it
+    And I wait the progress bar
+    And I wait 5 seconds
+    And I check the presence of AlarmsPage.lastAlarmWithTestConcept01IconDetail Element and then i click it
+    Then I check the presence of AlarmsDetailsPage.alarmsDetailsLandingPageTitle
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmInDetails
+    Then I check the presence of AlarmsDetailsPage.disserviceAlarmFourMinutes
+    #check the alarm is not received
+     #email
+    Then I check the number of emails received and expect 3 notification
+    #Check SMS
+    #Then I check text "Test_Concept-01" is in sms boxes body
+
+    #------------------------------------Remove configuration to restore changes---------------------------------------
+    # remove Device Alarms Configurations
+    Then I click HomePage.hamburgerMenuIcon
+    Then I click SidebarPage.e2eMonitoringOption
+    Then I click SidebarPage.deviceAlarmsConfigurationSubOption
+    And I check the presence of DeviceAlarmsConfigurationPage.iconTrashAlarmTestConcept1 Element and then i click it
+    Then I check the presence of DeviceAlarmsConfigurationPage.deleteButton Element and then i click it
+    And I check the presence of DeviceAlarmsConfigurationPage.toastMessageClose Element and then i click it
+
+   # remove Notifications Configurations
+    Then I click HomePage.hamburgerMenuIcon
+    And I click SidebarPage.notificationsConfigurationSubOption
+    And I check the presence of NotificationsConfigurationsPage.deleteTestConcept01Notification Element and then i click it
+    Then I check the presence of NotificationsConfigurationsPage.confirmDeleteButton Element and then i click it
+
+    #------------------------------------Remove configuration to restore changes---------------------------------------
+

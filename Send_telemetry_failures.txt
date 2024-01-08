@@ -1,0 +1,14 @@
+15.12: Crea un allarme con Test_Concept-04. Può fallire perchè dopo l'esecuzione dello script send_telemetry, dopo 5 minuti dovrebbe arrivare un messaggio di low_treshold nella sezione Alarms, ma per problemi di latenza può arrivare più tardi. Se fallisce cancellare configurazione allarme, notifica e RDE associati a Test_Concept-04.
+
+15.13: Crea un allarme con Test_Concept-04 e aggiunge l'opzione di notifiche aggregate. Fallisce perchè le notifiche aggregate non vengono effettivamente attivate (lo si può controllare nella sezione Edit della notifica dell'allarme) e il messaggio aggregated_alarm non arriva nella sezione Alarms. Quando fallisce cancellare configurazione allarme e notifica associati a Test_Concept-04.
+
+15.14: Analogo al 15.12 ma con Test_Concept-02.
+
+15.15: Crea un allarme con Test_Concept-04 con opzione Scheduled. Fallisce perchè con l'opzione Scheduled i messaggi di allarme nella mail, dopo l'esecuzione di send_telemetry, non arrivano. Quando fallisce cancellare configurazione allarme e notifica associati a Test_Concept-04.
+
+15.16: Crea un allarme con Test_Concept-04. Ripete tutti i test dal 15.12 al 15.15: fallisce per i problemi legati a quest'ultimi. Quando fallisce cancellare configurazione allarme, notifica e RDE associati a Test_Concept-04.
+
+------------------------------------------
+
+altri test con script da non mettere sul TAF:
+- 15.27, 15.28, 15.33, 15.34

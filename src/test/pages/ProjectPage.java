@@ -283,10 +283,10 @@ public class ProjectPage {
     @Element(xpath = "(//div[text() = 'aggregated data'])", desc = "Aggregated data div")
     private static PageElement aggregatedDataLabel;
 
-    @Element(xpath = "//*[name()='tspan' and text()= 'Activations']", desc = "activations legend of the table")
+    @Element(xpath = "//*[text()='Activations' and @class='highcharts-axis-title']", desc = "activations legend of the table")
     private static PageElement activationsLegend;
 
-    @Element(xpath = "//*[name()='tspan' and text()= 'Devices']", desc = "Devices legend of the table")
+    @Element(xpath = "//*[text()='Devices' and @class='highcharts-axis-title']", desc = "Devices legend of the table")
     private static PageElement devicesLegend;
 
     @Element(xpath = "//header[contains(.,'Devices & Activations')]/following-sibling::section/div//mat-button-toggle[contains(.,' 6 Months ')]", desc = "6 months button in device section")
@@ -307,10 +307,10 @@ public class ProjectPage {
     @Element(xpath = "//div[@class='ml-3']/div[@class= 'row' and contains(.,'Activations:')]/following-sibling::div", desc = "Device & Activations graph legend numbers: Total Activations")
     private static PageElement totalActivationsLegendNumber;
 
-    @Element(xpath = "//*[name()='tspan' and text()= 'Alarms/Devices']", desc = "Alarms/Devices legend of the alarms table")
+    @Element(xpath = "//*[text()='Alarms/Devices' and @class='highcharts-axis-title']", desc = "Alarms/Devices legend of the alarms table")
     private static PageElement alarmsDevicesLegend;
 
-    @Element(xpath = "//*[name()='tspan' and text()= 'Alarms']", desc = "Alarms legend of the alarms table")
+    @Element(xpath = "//*[text()='Alarms' and @class='highcharts-axis-title']", desc = "Alarms legend of the alarms table")
     private static PageElement alarmsLegend;
 
     @Element(xpath = "//div[@class='ml-3']/div[@class= 'row' and contains(.,'Gateway alarms:')]", desc = "Alarms graph legend: Gateway alarms")

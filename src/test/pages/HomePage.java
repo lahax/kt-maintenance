@@ -76,10 +76,8 @@ public class HomePage {
     private static PageElement lastProject;
     @Element(xpath = "(//div[@class='card-top'])[position() >= 1 and position() < 10]", desc = "First 10 Card Projects")
     private static PageElement firstTenCardProject;
-
-    @Element(xpath = "(//span[@class='card-top'])[position()= 1]", desc = "Card project on position 1")
+    @Element(xpath = "(//div[@class='card-top'])[position()= 1]", desc = "Card project on position 1")
     private static PageElement firstCardProject;
-
     //@Element(xpath = "//dmc-input-container[contains(@class, 'dmc-search')]", desc = "search projects bar")
     @Element(xpath = "//input[@type = 'search']", desc = "search projects bar")
     private static PageElement searchProjectsBarElements;
@@ -246,8 +244,6 @@ public class HomePage {
     private static PageElement projectEsolPerf;
     @Element(xpath = "//div[@class='card-top']//div[contains(text(), 'esol-ap29551-test')]", desc="project card esol - test")
     private static PageElement projectEsolTest;
-
-
     @Element(xpath = "//span[contains(text(), ' If multiple projects are selected, not all features will be available. ')]", desc="white selection  multiple bar")
     private static PageElement multipleWhiteBar;
 
@@ -259,10 +255,6 @@ public class HomePage {
     @Element(xpath = "//div[@class='card dmc-project-card card-selected']//div[@class='col card-project-id']", desc="car selected name")
     private static PageElement cardSelectedName;
 
-
-    //@Element(xpath = "//div[@class='card dmc-project-card card-selected']//div[@class='col card-project-id']", desc="car selected name")
-    //private static PageElement cardSelectedName;
-
     public static PageElement getCardSelectedName() {
         return cardSelectedName;
     }
@@ -272,10 +264,9 @@ public class HomePage {
     @Element(xpath = "//dmc-form-field-label[contains(text(), 'Name')]/following-sibling::dmc-chips-autocomplete//input[@role='combobox']", desc="box for name in filter")
     private static PageElement boxForNameInFilter;
 
-
-
     @Element(xpath = "//dmc-form-field-label[contains(text(), 'Region')]/following-sibling::dmc-multi-select//dmc-multi-select-facade", desc="box for region in filter")
     private static PageElement boxForRegionInFilter;
+
     //@Element(xpath = "//dmc-form-field-label[contains(text(), 'Region')]/following-sibling::dmc-multi-select//dmc-multi-select-facade[@class='--open']", desc="open box for region in filter")
     //private static PageElement boxForRegionInFilterOpen;
 
@@ -389,4 +380,20 @@ public class HomePage {
     public static PageElement getSecondProjectTitle() {
         return secondProjectTitle;
     }
+
+    @Element(xpath = "//h1[contains(.,'ENELINT')]", desc = "User Profile Title")
+    private static PageElement profileTitle;
+
+    @Element(xpath = "//span[contains(@class, 'dmc-profile-access-pills')]", desc = "User Profile Access")
+    private static PageElement profileAccess;
+
+    @Element(xpath = "//div[@class='row dmc-profile-header']//div[contains(.,'AUTHORIZATION')]", desc = "User Profile Table Header")
+    private static PageElement profileTableHeaderAuthorization;
+
+    @Element(xpath = "//div[@class='row dmc-profile-header']//div[contains(.,'FEATURE')]", desc = "User Profile Table Header")
+    private static PageElement profileTableHeaderFeature;
+
+    @Element(xpath = "//span[contains(text(), 'User Guide')]", desc = "download user guide sub option into info user button")
+    private static PageElement userGuideSubOption;
+
 }

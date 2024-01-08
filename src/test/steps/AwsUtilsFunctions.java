@@ -780,4 +780,38 @@ public class AwsUtilsFunctions {
 
         }
     }
+    @Then("I check if {string} is present in Software table in DynamoDB")
+    public static void softwareDDBPresent( String name ){
+        String nameTable = "esol_ap2955103_qa_ddb_sw_catalogue";
+        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
+        DynamoDB dynamoDB = new DynamoDB(client);
+        Table table = dynamoDB.getTable(nameTable);
+        List<String> listItems = new Vector<>();
+
+        ScanSpec scanSpec = new ScanSpec()
+                .withProjectionExpression("appname, device_type");
+        //.withFilterExpression("device_type");
+        try {
+            ItemCollection<ScanOutcome> items = table.scan(scanSpec);
+            for (Item item : items) {
+                String t = item.toString().replaceAll("=", ":");
+                if(t.contains("device_type:thing")){
+
+                    String tt = t.substring(17,t.indexOf(","));
+                    listItems.add(tt);
+                }
+
+            }
+        } catch (Exception e) {
+            Assert.fail("### ERROR ###\n\t" + e);
+        }
+        boolean present = false;
+        for(String ls: listItems){
+            if (ls.equals(name)) {
+                present = true;
+                break;
+            }
+        }
+        Assert.assertTrue(present);
+    }
 }

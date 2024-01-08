@@ -439,7 +439,7 @@ public class DevicesDetailsSteps {
     @Then("^I hover over package name")
     public static void hoverBy() throws Exception {
         //PageElement elem = UtilFunctions.createNewPageElement("softwareln", "/html/body/dmc-root/ng-component/div/div/app-device-detail-wrapper/dmc-gateway-detail/mat-tab-group/div/mat-tab-body[1]/div/dmc-gateway-detail-general/div/div[1]/div[2]/div/div[2]/dmc-details-grid/div/div/dmc-details-grid-item[9]/div[2]/div/dmc-packages-list/div/div[1]/span");
-        WebElement elem = CommonPage.getDriver().findElement(By.xpath("/html/body/dmc-root/ng-component/div/div/app-device-detail-wrapper/dmc-gateway-detail/mat-tab-group/div/mat-tab-body[1]/div/dmc-gateway-detail-general/div/div[1]/div[2]/div/div[2]/dmc-details-grid/div/div/dmc-details-grid-item[9]/div[2]/div/dmc-packages-list/div/div[1]/span"));
+        WebElement elem = CommonPage.getDriver().findElement(By.xpath("//a[@class='--more-packages ng-star-inserted']"));
         Actions action = new Actions(CommonPage.getDriver());
         action.moveToElement(elem).perform();
         Thread.sleep(2000);

@@ -140,6 +140,8 @@ public class CustomGroupsPage {
 
     @Element(xpath = "//mat-chip[contains(text(), 'Test_Concept-02_thing2')]", desc = "thing gateway in group")
     private static PageElement concept02Thing2box;
+    @Element(xpath = "//mat-chip[contains(text(), 'Test_Concept-02_thing3')]", desc = "thing gateway in group")
+    private static PageElement concept02Thing3box;
     @Element(xpath = "//mat-chip[contains(text(), 'Test_Concept-01_thing3')]", desc = "thing gateway in group")
     private static PageElement concept01Thing3box;
 

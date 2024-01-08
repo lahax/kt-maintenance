@@ -23,7 +23,7 @@ public class CampaignManagementView {
     public static PageElement customQueryChevron;
     @Element(xpath = "//div[contains(@class,'ace_line')]", desc = "Textarea Custom Query")
     public static PageElement firstRowIntTextarea;
-    @Element(xpath = "//textarea/../../following-sibling::div//button[contains(text(),'Confirm')]", desc = "Custom Query Button Confirm")
+    @Element(xpath = "//dmc-collapsable-card-action//button[contains(text(),'Confirm')]", desc = "Custom Query Button Confirm")
     public static PageElement customQueryConfirm;
 
     @Element(xpath = "//div[contains(@class,'-option-label') and contains(text(),'eig-cu')]", desc = "eig-cu option")

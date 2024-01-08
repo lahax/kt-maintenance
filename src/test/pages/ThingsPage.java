@@ -72,7 +72,7 @@ public class ThingsPage {
     @Element(xpath = "//div[@class='--align-left --ellipsis ng-star-inserted' and text()=' Model ']", desc = "Model Column")
     private static PageElement modelColumn;
 
-    @Element(xpath = "//div[@class='--align-left --ellipsis ng-star-inserted' and text()=' Certificate ']", desc = "Certificate Column")
+    @Element(xpath = "//div[@class='--align-left --ellipsis ng-star-inserted' and contains(., 'Certificate expiration')]", desc = "Certificate Column")
     private static PageElement certificateColumn;
 
     @Element(xpath = "//div[@class='--align-left --ellipsis ng-star-inserted' and contains(., 'Alias')]", desc = "Alias Column")

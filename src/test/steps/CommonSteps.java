@@ -568,6 +568,10 @@ public class CommonSteps {
             className = "DevicesPage";
             fieldName = "testConcept01Thing3Row";
         }
+        if(thing.equals("thing3") && gateway.equals("Test_Concept-02")){
+            className = "DevicesPage";
+            fieldName = "testConcept02Thing3Row";
+        }
         Thread.sleep(1000);
         PageElement elem = ReflectionUtils.getPageElementByString(className, fieldName);
         if(elem.isPresent()) {
@@ -2066,6 +2070,31 @@ public class CommonSteps {
        Assert.assertTrue(isDownloadedNew, "No new file csv found in the download user directory");
     }
 
+    @And("I check if export file with {string} format is downloaded successfully and I delete it")
+    public void iCheckTheDownloadedFileAndDelete(String fileType) throws IOException, InterruptedException, ParseException {
+        boolean isDownloadedNew = false;
+        String pathUserHome = System.getProperty("user.home")+"\\Downloads\\";
+        Set<String> listFiles = listFilesUsingDirectoryStream(pathUserHome);
+        listFiles.removeIf(s -> !s.contains("."+fileType));
+        Set<String> listFilesBefore = getListFiles();
+        String nameFile="";
+        listFiles.removeAll(listFilesBefore);
+        for(String s : listFiles){
+            if (s != null && s.contains("."+fileType)) {
+                isDownloadedNew = true;
+                nameFile = s;
+                break;
+            }
+        }
+        if(isDownloadedNew) {
+            String pathFileDaAprire = pathUserHome + nameFile;
+            File fileExcelScaricato = new File(pathFileDaAprire);
+
+            fileExcelScaricato.delete();
+        }
+        Assert.assertTrue(isDownloadedNew, "No new file " + fileType+ " found in the download user directory");
+    }
+
     private static Set<String> listFiles = null;
 
     public static Set<String> getListFiles() {
@@ -2082,6 +2111,15 @@ public class CommonSteps {
         Set<String> listFiles = listFilesUsingDirectoryStream(pathUserHome);
         //Iterate all files in Download directory
         listFiles.removeIf(s -> !s.contains(".csv"));
+        setListFiles(listFiles);
+
+    }
+    @And("I save number of {string} files in directory")
+    public void iCheckTheDownloadedFiles(String fileType) throws IOException, InterruptedException, ParseException {
+        String pathUserHome = System.getProperty("user.home")+"\\Downloads\\";
+        Set<String> listFiles = listFilesUsingDirectoryStream(pathUserHome);
+        //Iterate all files in Download directory
+        listFiles.removeIf(s -> !s.contains("."+fileType));
         setListFiles(listFiles);
 
     }

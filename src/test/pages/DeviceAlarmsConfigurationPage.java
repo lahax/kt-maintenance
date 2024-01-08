@@ -388,6 +388,10 @@ public class DeviceAlarmsConfigurationPage {
     private static PageElement groupTest15_26;
     @Element(xpath = "//span[contains(text(), 'Test_15.30')]", desc = "group test 15.30 selection in wizard")
     private static PageElement groupTest15_30;
+    @Element(xpath = "//span[contains(text(), 'TestConcept1532')]", desc = "group test 15.30 selection in wizard")
+    private static PageElement groupTestConcept1532;
+    @Element(xpath = "//span[contains(text(), '1532')]", desc = "group test 15.30 selection in wizard")
+    private static PageElement groupTest1532;
 
     @Element(xpath = "//div[contains(text(), 'Test_Concept-04') and @class='-option-label']", desc = "option label in wizard Alarm Target")
     private static PageElement testConcept04ToSelect;
@@ -419,6 +423,9 @@ public class DeviceAlarmsConfigurationPage {
 
     @Element(xpath = "//strong[contains(text(), 'Test_15.26')]/parent::td//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "icon trash ")
     private static PageElement iconTrashAlarmCustomGroup15_26;
+
+    @Element(xpath = "//strong[contains(text(), '1532')]/parent::td//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "icon trash ")
+    private static PageElement iconTrashAlarmCustomGroup1532;
 
     @Element(xpath = "//strong[contains(text(), 'all')]/parent::td//following-sibling::td//i[contains(@class, 'dmc-icon__trash')]", desc = "icon trash")
     private static PageElement iconTrashAlarmScopeAll;
